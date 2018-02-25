@@ -21,3 +21,4 @@ Route::get('/productlist', 'ProductController@productlist');
 Route::get('/products/{id}', 'ProductController@show');
 Route::resource('posts', 'API\PostAPIController');
 Route::resource('heroes', 'API\HeroAPIController');
+Route::resource('users', 'API\UserAPIController');
