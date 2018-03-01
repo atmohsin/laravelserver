@@ -6,6 +6,8 @@ use App\Http\Controllers\API\APIBaseController as APIBaseController;
 use App\User;
 use Validator;
 use Illuminate\Support\Facades\Log;
+use JWTAuth;
+use JWTAuthException;
 
 class UserAPIController extends APIBaseController {
 
@@ -74,6 +76,11 @@ class UserAPIController extends APIBaseController {
 
       return $this->sendResponse($id,' User deleted successfully');
    }
+
+   public function getAuthUser(Request $request){
+        $user = JWTAuth::toUser($request->token);
+        return response()->json(['result' => $user]);
+    }
 }
 
 
