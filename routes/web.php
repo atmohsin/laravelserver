@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('upload', 'DependencyUploadController@uploadFile');
+Route::post('upload-advanced', 'UploadController@upload');
